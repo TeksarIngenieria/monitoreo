@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teksar · Monitoreo Solar</title>
+<style>
+  :root{
+    --verde:#5ED84A;
+    --verde-tenue:#3a7a30;
+    --negro:#0a0d0a;
+    --panel:#12181300;
+    --panel-solido:#141b15;
+    --panel-borde:#26332680;
+    --texto:#e8f0e6;
+    --texto-tenue:#8fa389;
+    --alerta:#e8b13a;
+    --rojo:#e05a4a;
+    --grid-linea:#1e281e;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{
+    background:var(--negro);
+    color:var(--texto);
+    font-family:'Segoe UI',system-ui,-apple-system,sans-serif;
+    min-height:100vh;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* ---------- PANTALLA DE CLAVE ---------- */
+  #login{
+    position:fixed;inset:0;z-index:1000;
+    background:radial-gradient(circle at 50% 40%, #101810 0%, var(--negro) 70%);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;
+  }
+  #login .logo-wrap{display:flex;flex-direction:column;align-items:center;gap:18px}
+  #login h1{font-size:15px;letter-spacing:6px;text-transform:uppercase;color:var(--texto-tenue);font-weight:400}
+  #login .box{display:flex;flex-direction:column;gap:12px;width:280px}
+  #login input{
+    background:var(--panel-solido);border:1px solid var(--panel-borde);
+    color:var(--texto);padding:14px 16px;border-radius:10px;font-size:15px;text-align:center;letter-spacing:2px;
+    outline:none;transition:border-color .2s;
+  }
+  #login input:focus{border-color:var(--verde)}
+  #login button{
+    background:var(--verde);color:#04120a;border:none;padding:14px;border-radius:10px;
+    font-size:14px;font-weight:700;letter-spacing:1px;cursor:pointer;text-transform:uppercase;transition:opacity .2s;
+  }
+  #login button:hover{opacity:.88}
+  #login .err{color:var(--rojo);font-size:13px;height:16px;text-align:center}
+
+  /* ---------- LOGO SVG ---------- */
+  .marca{display:flex;align-items:center;gap:13px}
+  .marca svg{display:block}
+  .marca .nombre{font-size:26px;font-weight:700;letter-spacing:1px}
+  .marca .nombre b{color:var(--verde);font-weight:700}
+
+  /* ---------- APP ---------- */
+  #app{display:none;max-width:1240px;margin:0 auto;padding:26px 20px 60px}
+  header.top{
+    display:flex;align-items:center;justify-content:space-between;
+    padding-bottom:22px;border-bottom:1px solid var(--grid-linea);margin-bottom:26px;flex-wrap:wrap;gap:14px;
+  }
+  .top .meta{text-align:right;font-size:12px;color:var(--texto-tenue);line-height:1.6}
+  .top .meta b{color:var(--verde)}
+
+  /* Selector periodo */
+  .periodo{display:flex;gap:6px;background:var(--panel-solido);padding:5px;border-radius:12px;border:1px solid var(--panel-borde)}
+  .periodo button{
+    background:transparent;border:none;color:var(--texto-tenue);padding:9px 20px;border-radius:8px;
+    font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.5px;transition:all .18s;
+  }
+  .periodo button.on{background:var(--verde);color:#04120a}
+
+  /* Tarjetas resumen */
+  .resumen{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:14px}
+  .card{
+    background:linear-gradient(160deg,var(--panel-solido),#0e140e);
+    border:1px solid var(--panel-borde);border-radius:16px;padding:20px 22px;position:relative;overflow:hidden;
+  }
+  .card .etq{font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:var(--texto-tenue);margin-bottom:12px}
+  .card .val{font-size:30px;font-weight:700;line-height:1}
+  .card .val .u{font-size:14px;color:var(--texto-tenue);font-weight:400;margin-left:5px}
+  .card .sub{font-size:12px;color:var(--texto-tenue);margin-top:8px}
+  .card.destacada{border-color:var(--verde-tenue)}
+  .card .barra{position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--verde)}
+
+  /* Destacados */
+  .destacados{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:26px}
+  .dest{background:var(--panel-solido);border:1px solid var(--panel-borde);border-radius:14px;padding:16px 18px}
+  .dest .cab{display:flex;align-items:center;gap:8px;font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--texto-tenue);margin-bottom:10px}
+  .dest .quien{font-size:16px;font-weight:600;margin-bottom:3px}
+  .dest .cuanto{font-size:13px;color:var(--verde)}
+  .dest .ico{width:18px;height:18px;flex-shrink:0}
+
+  /* Tabla */
+  .tabla-wrap{background:var(--panel-solido);border:1px solid var(--panel-borde);border-radius:16px;overflow:hidden}
+  .tabla-cab{padding:18px 22px;border-bottom:1px solid var(--grid-linea);display:flex;justify-content:space-between;align-items:center}
+  .tabla-cab h2{font-size:15px;font-weight:600;letter-spacing:.5px}
+  .tabla-cab span{font-size:12px;color:var(--texto-tenue)}
+  table{width:100%;border-collapse:collapse}
+  thead th{
+    text-align:right;padding:13px 16px;font-size:11px;text-transform:uppercase;letter-spacing:.8px;
+    color:var(--texto-tenue);font-weight:600;cursor:pointer;user-select:none;white-space:nowrap;border-bottom:1px solid var(--grid-linea);
+  }
+  thead th:first-child{text-align:left}
+  thead th:hover{color:var(--verde)}
+  thead th .flecha{opacity:0;font-size:9px;margin-left:3px}
+  thead th.sort .flecha{opacity:1;color:var(--verde)}
+  tbody td{padding:13px 16px;text-align:right;font-size:14px;border-bottom:1px solid var(--grid-linea);font-variant-numeric:tabular-nums}
+  tbody td:first-child{text-align:left;font-weight:600}
+  tbody tr:last-child td{border-bottom:none}
+  tbody tr:hover{background:#0e140e}
+  .bat{display:inline-flex;align-items:center;gap:9px;justify-content:flex-end}
+  .bat .track{width:46px;height:7px;background:#0a0f0a;border:1px solid var(--grid-linea);border-radius:4px;overflow:hidden}
+  .bat .fill{height:100%;border-radius:3px;min-width:2px}
+  .pill{display:inline-block;padding:2px 9px;border-radius:20px;font-size:11px;font-weight:600}
+  .pill.ok{background:#153015;color:var(--verde)}
+  .pill.warn{background:#3a2f10;color:var(--alerta)}
+  .num-verde{color:var(--verde)}
+  .tenue{color:var(--texto-tenue)}
+
+  footer{text-align:center;margin-top:32px;font-size:12px;color:var(--texto-tenue);line-height:1.7}
+  footer b{color:var(--verde-tenue)}
+
+  @media(max-width:900px){
+    .resumen,.destacados{grid-template-columns:repeat(2,1fr)}
+    .ocultable{display:none}
+    thead th,tbody td{padding:11px 10px;font-size:13px}
+  }
+  @media(max-width:560px){
+    .resumen,.destacados{grid-template-columns:1fr}
+    .top{flex-direction:column;align-items:flex-start}
+    .top .meta{text-align:left}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ LOGIN ============ -->
+<div id="login">
+  <div class="logo-wrap">
+    <div class="marca">
+      <svg width="46" height="46" viewBox="0 0 46 46" fill="none">
+        <rect width="46" height="46" rx="10" fill="#0d130d"/>
+        <path d="M23 8 L34 23 L23 38 L12 23 Z" stroke="#5ED84A" stroke-width="2" fill="none"/>
+        <path d="M23 15 L29 23 L23 31 L17 23 Z" fill="#5ED84A"/>
+      </svg>
+      <div class="nombre"><b>teksar</b></div>
+    </div>
+    <h1>Monitoreo Solar</h1>
+  </div>
+  <div class="box">
+    <input type="password" id="clave" placeholder="Clave de acceso" autocomplete="off">
+    <button onclick="entrar()">Ingresar</button>
+    <div class="err" id="errClave"></div>
+  </div>
+</div>
+
+<!-- ============ APP ============ -->
+<div id="app">
+  <header class="top">
+    <div class="marca">
+      <svg width="38" height="38" viewBox="0 0 46 46" fill="none">
+        <rect width="46" height="46" rx="10" fill="#0d130d"/>
+        <path d="M23 8 L34 23 L23 38 L12 23 Z" stroke="#5ED84A" stroke-width="2" fill="none"/>
+        <path d="M23 15 L29 23 L23 31 L17 23 Z" fill="#5ED84A"/>
+      </svg>
+      <div class="nombre" style="font-size:22px"><b>teksar</b> <span style="color:var(--texto-tenue);font-weight:400;font-size:15px">· Monitoreo Solar</span></div>
+    </div>
+    <div class="meta">
+      Actualizado <b id="mActualizado">—</b><br>
+      <span id="mPlantas">—</span> plantas monitoreadas
+    </div>
+  </header>
+
+  <div class="periodo" style="margin-bottom:20px;width:fit-content">
+    <button data-p="dia" class="on" onclick="setPeriodo('dia')">Día</button>
+    <button data-p="mes" onclick="setPeriodo('mes')">Mes</button>
+    <button data-p="anio" onclick="setPeriodo('anio')">Año</button>
+  </div>
+
+  <!-- Resumen -->
+  <div class="resumen" id="resumen"></div>
+
+  <!-- Destacados -->
+  <div class="destacados" id="destacados"></div>
+
+  <!-- Tabla comparativa -->
+  <div class="tabla-wrap">
+    <div class="tabla-cab">
+      <h2>Comparativa por planta</h2>
+      <span id="tituloPeriodo">Hoy</span>
+    </div>
+    <div style="overflow-x:auto">
+      <table id="tabla">
+        <thead>
+          <tr>
+            <th onclick="ordenar('nombre')">Cliente <span class="flecha">▼</span></th>
+            <th onclick="ordenar('gen')">Generación <span class="flecha">▼</span></th>
+            <th onclick="ordenar('cons')">Consumo <span class="flecha">▼</span></th>
+            <th onclick="ordenar('grid')" class="ocultable">A red <span class="flecha">▼</span></th>
+            <th onclick="ordenar('kwp')" class="ocultable">kWp <span class="flecha">▼</span></th>
+            <th onclick="ordenar('bat')">Batería <span class="flecha">▼</span></th>
+            <th onclick="ordenar('alertas')" class="ocultable">Alertas <span class="flecha">▼</span></th>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <footer>
+    <b>teksar</b> · Datos vía Deye Cloud API · Se actualiza automáticamente cada día<br>
+    Las alertas corresponden a eventos registrados por los equipos en los últimos 30 días
+  </footer>
+</div>
+
+<script>
+// ====== CONFIG CLAVE ======
+// Cambiá esta clave por la que quieras. Nota: es proteccion basica del lado del navegador.
+const CLAVE_ACCESO = "teksar2026";
+
+// ====== ESTADO ======
+let DATA = null;
+let periodo = "dia";
+let orden = {campo:"gen", desc:true};
+
+const TITULOS = {dia:"Hoy", mes:"Este mes", anio:"Este año"};
+
+// ====== LOGIN ======
+function entrar(){
+  const val = document.getElementById("clave").value;
+  if(val === CLAVE_ACCESO){
+    sessionStorage.setItem("teksar_ok","1");
+    mostrarApp();
+  } else {
+    document.getElementById("errClave").textContent = "Clave incorrecta";
+    document.getElementById("clave").value = "";
+  }
+}
+document.getElementById("clave").addEventListener("keydown", e=>{ if(e.key==="Enter") entrar(); });
+
+function mostrarApp(){
+  document.getElementById("login").style.display="none";
+  document.getElementById("app").style.display="block";
+  if(!DATA) cargar();
+}
+
+// ====== CARGA DE DATOS ======
+async function cargar(){
+  try{
+    const r = await fetch("data.json?t="+Date.now());
+    DATA = await r.json();
+    render();
+  }catch(e){
+    document.getElementById("resumen").innerHTML =
+      '<div class="card" style="grid-column:1/-1"><div class="etq">Error</div><div class="sub">No se pudo cargar data.json. Verificá que el archivo esté junto al index.html.</div></div>';
+  }
+}
+
+// ====== HELPERS ======
+const fmt = n => (n==null?0:n).toLocaleString("es-AR",{maximumFractionDigits:1});
+function colorBat(soc){
+  if(soc==null) return "var(--texto-tenue)";
+  if(soc>=60) return "var(--verde)";
+  if(soc>=30) return "var(--alerta)";
+  return "var(--rojo)";
+}
+
+// ====== RENDER ======
+function setPeriodo(p){
+  periodo=p;
+  document.querySelectorAll(".periodo button").forEach(b=>b.classList.toggle("on",b.dataset.p===p));
+  document.getElementById("tituloPeriodo").textContent = TITULOS[p];
+  render();
+}
+
+function filas(){
+  return DATA.plantas.map(p=>{
+    const per = p[periodo] || {};
+    return {
+      nombre:p.nombre, kwp:p.kwp||0, bat:p.bateriaSOC,
+      gen:per.generation||0, cons:per.consumption||0,
+      grid:per.grid||0, purchase:per.purchase||0,
+      alertas:p.alertas30d||0, potActual:p.potenciaActual||0
+    };
+  });
+}
+
+function render(){
+  if(!DATA) return;
+  document.getElementById("mActualizado").textContent = DATA.actualizado || "—";
+  document.getElementById("mPlantas").textContent = DATA.totalPlantas || DATA.plantas.length;
+
+  const f = filas();
+  const totGen = f.reduce((a,x)=>a+x.gen,0);
+  const totCons = f.reduce((a,x)=>a+x.cons,0);
+  const totGrid = f.reduce((a,x)=>a+x.grid,0);
+  const totPot = f.reduce((a,x)=>a+x.potActual,0);
+  const online = DATA.plantas.filter(p=>p.estado==="NORMAL").length;
+
+  // Resumen
+  document.getElementById("resumen").innerHTML = `
+    <div class="card destacada"><div class="barra"></div>
+      <div class="etq">Generación ${TITULOS[periodo].toLowerCase()}</div>
+      <div class="val">${fmt(totGen)}<span class="u">kWh</span></div>
+      <div class="sub">Suma de las ${f.length} plantas</div></div>
+    <div class="card"><div class="etq">Consumo ${TITULOS[periodo].toLowerCase()}</div>
+      <div class="val">${fmt(totCons)}<span class="u">kWh</span></div>
+      <div class="sub">Total de clientes</div></div>
+    <div class="card"><div class="etq">Inyectado a red</div>
+      <div class="val">${fmt(totGrid)}<span class="u">kWh</span></div>
+      <div class="sub">Energía vendida</div></div>
+    <div class="card"><div class="etq">Potencia ahora</div>
+      <div class="val">${fmt(totPot/1000)}<span class="u">kW</span></div>
+      <div class="sub">${online}/${f.length} plantas online</div></div>`;
+
+  // Destacados
+  const mayorGen = [...f].sort((a,b)=>b.gen-a.gen)[0];
+  const mayorGrid = [...f].sort((a,b)=>b.grid-a.grid)[0];
+  const mayorCons = [...f].sort((a,b)=>b.cons-a.cons)[0];
+  const menorBat = [...DATA.plantas].filter(p=>p.bateriaSOC!=null).sort((a,b)=>a.bateriaSOC-b.bateriaSOC)[0];
+
+  const ico = d=>`<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="#5ED84A" stroke-width="2"><path d="${d}"/></svg>`;
+  document.getElementById("destacados").innerHTML = `
+    <div class="dest"><div class="cab">${ico("M13 2L3 14h7v8l10-12h-7z")} Más generó</div>
+      <div class="quien">${mayorGen.nombre}</div><div class="cuanto">${fmt(mayorGen.gen)} kWh</div></div>
+    <div class="dest"><div class="cab">${ico("M3 12h18M12 3v18")} Más inyectó a red</div>
+      <div class="quien">${mayorGrid.grid>0?mayorGrid.nombre:"—"}</div><div class="cuanto">${fmt(mayorGrid.grid)} kWh</div></div>
+    <div class="dest"><div class="cab">${ico("M4 20h16M6 16l4-8 4 4 4-8")} Mayor consumo</div>
+      <div class="quien">${mayorCons.nombre}</div><div class="cuanto">${fmt(mayorCons.cons)} kWh</div></div>
+    <div class="dest"><div class="cab">${ico("M6 7h11v10H6zM17 10h2v4h-2")} Batería más baja</div>
+      <div class="quien">${menorBat?menorBat.nombre:"—"}</div>
+      <div class="cuanto" style="color:${menorBat?colorBat(menorBat.bateriaSOC):''}">${menorBat?menorBat.bateriaSOC+"%":"—"}</div></div>`;
+
+  renderTabla(f);
+}
+
+function ordenar(campo){
+  if(orden.campo===campo) orden.desc=!orden.desc;
+  else {orden.campo=campo; orden.desc=true;}
+  renderTabla(filas());
+}
+
+function renderTabla(f){
+  const c=orden.campo;
+  f.sort((a,b)=>{
+    let va=a[c], vb=b[c];
+    if(c==="nombre"){ return orden.desc? vb.localeCompare(va): va.localeCompare(vb); }
+    return orden.desc? vb-va : va-vb;
+  });
+
+  // marcar header activo
+  document.querySelectorAll("thead th").forEach(th=>th.classList.remove("sort"));
+  const idx = {nombre:0,gen:1,cons:2,grid:3,kwp:4,bat:5,alertas:6}[c];
+  const th = document.querySelectorAll("thead th")[idx];
+  if(th){ th.classList.add("sort"); th.querySelector(".flecha").textContent = orden.desc?"▼":"▲"; }
+
+  document.getElementById("tbody").innerHTML = f.map(x=>{
+    const bc = colorBat(x.bat);
+    const batCell = x.bat==null? '<span class="tenue">—</span>' :
+      `<span class="bat"><span class="track"><span class="fill" style="width:${x.bat}%;background:${bc}"></span></span><span style="color:${bc};min-width:34px;text-align:right">${x.bat}%</span></span>`;
+    const alertCell = x.alertas>0? `<span class="pill warn">${x.alertas}</span>` : `<span class="pill ok">0</span>`;
+    const gridCell = x.grid>0? `<span class="num-verde">${fmt(x.grid)}</span>` : `<span class="tenue">0</span>`;
+    return `<tr>
+      <td>${x.nombre}</td>
+      <td class="num-verde">${fmt(x.gen)}</td>
+      <td>${fmt(x.cons)}</td>
+      <td class="ocultable">${gridCell}</td>
+      <td class="ocultable tenue">${fmt(x.kwp)}</td>
+      <td>${batCell}</td>
+      <td class="ocultable">${alertCell}</td>
+    </tr>`;
+  }).join("");
+}
+
+// ====== INICIO ======
+if(sessionStorage.getItem("teksar_ok")==="1"){ mostrarApp(); }
+</script>
+</body>
+</html>
