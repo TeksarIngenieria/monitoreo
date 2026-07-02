@@ -10,7 +10,7 @@ EMAIL = os.environ.get("DEYE_EMAIL")
 PASSWORD = os.environ.get("DEYE_PASSWORD")
 
 def obtener_token():
-    url = "https://api.deyecloud.com/v1.0/oauth/token"
+    url = "https://api-eu.deyecloud.com/v1.0/oauth/token"
     payload = {
         "app_id": APP_ID,
         "app_secret": APP_SECRET,
@@ -27,7 +27,7 @@ def obtener_token():
         return None
 
 def obtener_plantas(token):
-    url = "https://api.deyecloud.com/v1.0/account/plants"
+    url = "https://api-eu.deyecloud.com/v1.0/account/plants"
     headers = {"Authorization": f"Bearer {token}"}
     try:
         response = requests.get(url, headers=headers, timeout=15)
