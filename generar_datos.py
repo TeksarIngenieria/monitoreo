@@ -10,6 +10,7 @@ EMAIL = os.environ.get("DEYE_EMAIL")
 PASSWORD = os.environ.get("DEYE_PASSWORD")
 
 def obtener_token():
+    # Usamos el servidor internacional de respaldo (api-eu)
     url = "https://api-eu.deyecloud.com/v1.0/oauth/token"
     payload = {
         "app_id": APP_ID,
@@ -27,6 +28,7 @@ def obtener_token():
         return None
 
 def obtener_plantas(token):
+    # Usamos el servidor internacional de respaldo (api-eu)
     url = "https://api-eu.deyecloud.com/v1.0/account/plants"
     headers = {"Authorization": f"Bearer {token}"}
     try:
