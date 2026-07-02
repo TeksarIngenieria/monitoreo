@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0045)file:///C:/Users/lucas/Downloads/index_7.html -->
+<!-- saved from url=(0045)file:///C:/Users/lucas/Downloads/index_8.html -->
 <html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -124,52 +124,6 @@
   .tenue{color:var(--tinta-suave)}
 
 
-  /* DIAGRAMA DE FLUJO */
-  .flujo-wrap{background:var(--blanco);border:1px solid var(--linea);
-    border-radius:20px;padding:26px 24px 34px;margin-bottom:26px;box-shadow:var(--sombra)}
-  .flujo-tit{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;flex-wrap:wrap;gap:8px}
-  .flujo-tit h2{font-size:14px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--tinta)}
-  .flujo-tit .liv{display:flex;align-items:center;gap:7px;font-size:11px;color:var(--tinta-suave);font-weight:600}
-  .flujo-tit .liv .dot{width:8px;height:8px;border-radius:50%;background:var(--verde);
-    box-shadow:0 0 7px var(--verde);animation:latido 1.6s infinite}
-  @keyframes latido{0%,100%{opacity:1}50%{opacity:.3}}
-  .diagrama{position:relative;width:100%;max-width:820px;height:340px;margin:0 auto}
-  /* Nodos posicionados */
-  .nodo{position:absolute;display:flex;flex-direction:column;align-items:center;gap:6px;width:120px;z-index:3}
-  .nodo .caja{width:74px;height:74px;border-radius:50%;display:flex;align-items:center;justify-content:center;
-    background:var(--fondo);border:2px solid var(--linea);box-shadow:0 3px 10px rgba(43,47,51,.07)}
-  .nodo .caja svg{width:40px;height:40px}
-  .nodo .lbl{font-size:12px;font-weight:700;color:var(--tinta);text-align:center}
-  .nodo.panel{left:calc(50% - 60px);top:0}
-  .nodo.inv{left:calc(50% - 60px);top:133px}
-  .nodo.casa{left:calc(50% - 60px);top:266px}
-  .nodo.bat{left:0;top:133px}
-  .nodo.red{right:0;top:133px}
-  .nodo.panel .caja{border-color:var(--verde-vivo)}
-  .nodo.inv .caja{border-color:var(--verde);background:#f3f8e4}
-  .nodo.bat .caja{border-color:#8ec7e6}
-  .nodo.casa .caja{border-color:#f0c584}
-  .nodo.red .caja{border-color:#d6a9e8}
-  /* Valores al costado de cada linea */
-  .val-flotante{position:absolute;font-size:14px;font-weight:800;white-space:nowrap;z-index:4}
-  .val-panel{top:96px;left:calc(50% + 18px);color:var(--verde-osc)}
-  .val-casa{top:238px;left:calc(50% + 18px);color:#c47f16}
-  .val-bat{top:116px;left:130px;color:#3d84ab}
-  .val-red{top:116px;right:130px;color:#9354ac;text-align:right}
-  /* SVG de lineas */
-  svg.cables{position:absolute;inset:0;width:100%;height:100%;z-index:1;overflow:visible}
-  .flujo-linea{fill:none;stroke-width:3;stroke-linecap:round;
-    stroke-dasharray:2 9;animation:fluir .9s linear infinite;opacity:.9}
-  @keyframes fluir{to{stroke-dashoffset:-11}}
-  .f-solar{stroke:var(--verde-vivo)} .f-bat{stroke:#4d9dc9}
-  .f-casa{stroke:#e0972b} .f-red{stroke:#b571d1}
-  @media(max-width:640px){
-    .diagrama{max-width:340px;height:320px}
-    .nodo{width:96px}.nodo .caja{width:60px;height:60px}
-    .nodo.panel,.nodo.inv,.nodo.casa{left:calc(50% - 48px)}
-    .val-panel,.val-casa{left:calc(50% + 12px);font-size:12px}
-    .val-bat{left:78px;font-size:12px}.val-red{right:78px;font-size:12px}
-  }
   /* BUSCADOR */
   .tabla-cab .cab-right{display:flex;align-items:center;gap:12px}
   .buscador{position:relative}
@@ -223,7 +177,7 @@
     --linea:#26313700;--linea-suave:#1e272c;
   }
   body.dark{background:#0a0f11}
-  body.dark .card,body.dark .dest,body.dark .tabla-wrap,body.dark .flujo-wrap,
+  body.dark .card,body.dark .dest,body.dark .tabla-wrap,
   body.dark .barras-wrap,body.dark header.top,body.dark .periodo,body.dark .modal{
     background:#161d21;border-color:#263137}
   body.dark thead th{background:#1a2227;border-bottom-color:#2a353b}
@@ -312,80 +266,7 @@
   </div>
 
 
-  <div class="flujo-wrap">
-    <div class="flujo-tit">
-      <h2>Flujo de energía del sistema</h2>
-      <div class="liv"><span class="dot"></span> <span id="livTxt">En vivo</span></div>
-    </div>
-    <div class="diagrama">
-      <svg class="cables" viewBox="0 0 820 340" preserveAspectRatio="none">
-        <defs>
-          <marker id="fSolar" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="#8fae12"></path></marker>
-          <marker id="fBat" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="#4d9dc9"></path></marker>
-          <marker id="fCasa" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="#e0972b"></path></marker>
-          <marker id="fRed" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="#b571d1"></path></marker>
-        </defs>
-        <!-- Paneles -> Inversor -->
-        <path class="flujo-linea f-solar" marker-end="url(#fSolar)" d="M410 80 L410 128"></path>
-        <!-- Bateria -> Inversor -->
-        <path class="flujo-linea f-bat" marker-end="url(#fBat)" d="M104 170 L365 170"></path>
-        <!-- Red -> Inversor -->
-        <path class="flujo-linea f-red" marker-end="url(#fRed)" d="M716 170 L455 170"></path>
-        <!-- Inversor -> Consumo -->
-        <path class="flujo-linea f-casa" marker-end="url(#fCasa)" d="M410 212 L410 260"></path>
-      </svg>
-      <div class="nodo panel"><div class="caja"><svg viewBox="0 0 48 48" fill="none">
-<!-- sol -->
-<circle cx="15" cy="11" r="4.5" fill="#8aa617"></circle>
-<g stroke="#8aa617" stroke-width="1.6" stroke-linecap="round">
-<line x1="15" y1="3" x2="15" y2="5"></line><line x1="15" y1="17" x2="15" y2="19"></line>
-<line x1="7" y1="11" x2="9" y2="11"></line><line x1="21" y1="11" x2="23" y2="11"></line>
-<line x1="9.3" y1="5.3" x2="10.7" y2="6.7"></line><line x1="19.3" y1="5.3" x2="20.7" y2="6.7"></line>
-<line x1="9.3" y1="16.7" x2="10.7" y2="15.3"></line>
-</g>
-<!-- panel en perspectiva -->
-<path d="M18 22 L44 22 L40 42 L10 42 Z" fill="#8aa617" opacity="0.9"></path>
-<g stroke="#f3f8e4" stroke-width="1.3">
-<line x1="16.7" y1="28.7" x2="42.3" y2="28.7"></line>
-<line x1="15.3" y1="35.3" x2="41" y2="35.3"></line>
-<line x1="26" y1="22" x2="24" y2="42"></line>
-<line x1="34" y1="22" x2="33" y2="42"></line>
-</g>
-</svg></div><div class="lbl">Paneles</div></div>
-      <div class="nodo inv"><div class="caja"><svg viewBox="0 0 24 24" fill="none" stroke="#6a8515" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2.5"></rect><path d="M8.5 12.5l2.5 2.5 4.5-5"></path></svg></div><div class="lbl">Inversores</div></div>
-      <div class="nodo bat"><div class="caja"><svg viewBox="0 0 48 48" fill="none">
-<rect x="6" y="15" width="33" height="20" rx="3.5" fill="none" stroke="#3d84ab" stroke-width="3"></rect>
-<rect x="41" y="21" width="4" height="8" rx="1.5" fill="#3d84ab"></rect>
-<path d="M26 18 L17 27 L23 27 L21 33 L31 24 L25 24 Z" fill="#3d84ab"></path>
-</svg></div><div class="lbl">Baterías</div></div>
-      <div class="nodo casa"><div class="caja"><svg viewBox="0 0 48 48" fill="none">
-<path d="M24 7 L42 23 L38 23 L38 41 L10 41 L10 23 L6 23 Z" fill="#c47f16"></path>
-<rect x="20" y="28" width="8" height="13" fill="#fff" opacity="0.55"></rect>
-<rect x="15" y="21" width="5" height="5" fill="#fff" opacity="0.55"></rect>
-<rect x="28" y="21" width="5" height="5" fill="#fff" opacity="0.55"></rect>
-</svg></div><div class="lbl">Consumo</div></div>
-      <div class="nodo red"><div class="caja"><svg viewBox="0 0 48 48" fill="none" stroke="#9354ac" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-<!-- patas de la torre -->
-<path d="M17 43 L21 16 L27 16 L31 43"></path>
-<!-- cintura -->
-<path d="M20 24 L28 24"></path>
-<path d="M18.7 33 L29.3 33"></path>
-<!-- crucetas superiores -->
-<path d="M11 13 L37 13"></path>
-<path d="M14 8 L34 8"></path>
-<!-- cuerpo superior -->
-<path d="M21 16 L24 4 L27 16"></path>
-<path d="M24 13 L24 4"></path>
-<!-- aisladores/lineas -->
-<path d="M11 13 L11 16 M37 13 L37 16 M14 8 L14 11 M34 8 L34 11" stroke-width="1.5"></path>
-</svg></div><div class="lbl">Red eléctrica</div></div>
-      <div class="val-flotante val-panel" id="fPanel">– kW</div>
-      <div class="val-flotante val-bat" id="fBat">– %</div>
-      <div class="val-flotante val-red" id="fRed">– kWh</div>
-      <div class="val-flotante val-casa" id="fCasa">– kW</div>
-    </div>  </div>
-
-  <div class="resumen" id="resumen"><div class="card" style="grid-column:1/-1"><div class="etq">Error</div><div class="sub">No se pudo cargar data.json.</div></div></div>
+<div class="resumen" id="resumen"><div class="card" style="grid-column:1/-1"><div class="etq">Error</div><div class="sub">No se pudo cargar data.json.</div></div></div>
   <div class="destacados" id="destacados"></div>
 
   <div class="barras-wrap">
@@ -536,16 +417,6 @@ function render(){
     <div class="dest"><div class="cab">${ico("M12 2v20M2 12h20M5 5l14 14")} Más ahorró de red</div>
       <div class="quien">${mAhorro?mAhorro.nombre:"-"}</div><div class="cuanto">${mAhorro?fmt(mAhorro.ahorro)+" kWh":"-"}</div></div>`;
 
-  // Diagrama de flujo (totales)
-  const totPot2=f.reduce((a,x)=>a+x.potActual,0);
-  const totConsW=DATA.plantas.reduce((a,p)=>a+(p.consumoActual||0),0);
-  const socs=DATA.plantas.filter(p=>p.bateriaSOC!=null).map(p=>p.bateriaSOC);
-  const socProm=socs.length?Math.round(socs.reduce((a,b)=>a+b,0)/socs.length):null;
-  const fp=document.getElementById("fPanel"); if(fp)fp.textContent=fmt(totPot2/1000)+" kW";
-  const fc=document.getElementById("fCasa"); if(fc)fc.textContent=fmt(totConsW/1000)+" kW";
-  const fb=document.getElementById("fBat"); if(fb)fb.textContent=(socProm!=null?socProm+" %":"-");
-  const fr=document.getElementById("fRed"); if(fr)fr.textContent=fmt(totGrid)+" kWh hoy";
-  const livT=document.getElementById("livTxt"); if(livT)livT.textContent="En vivo · "+online+" plantas activas";
 
   renderTabla(f);
   renderBarras(f);
@@ -620,7 +491,7 @@ function abrirModal(id){
   if(p.alertaPrincipal){
     estado+=`<div style="margin-top:12px;padding:12px 14px;background:#faf0d6;border-radius:12px;font-size:12.5px;color:#8a6d1f"><b>Observación:</b> ${p.alertaPrincipal}</div>`;
   }
-  document.getElementById("mBody").innerHTML=estado+bloque("Hoy","dia")+bloque("Este mes","mes")+bloque("Este año","anio");
+  document.getElementById("mBody").innerHTML=estado+bloque("Hoy",per("dia"))+bloque("Este mes",per("mes"))+bloque("Este año",per("anio"));
   document.getElementById("modalBg").classList.add("open");
 }
 function cerrarModal(){document.getElementById("modalBg").classList.remove("open");}
