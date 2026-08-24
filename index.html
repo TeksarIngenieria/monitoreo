@@ -582,13 +582,21 @@ if(sessionStorage.getItem("teksar_tema")==="dark"){document.body.classList.add("
 if(sessionStorage.getItem("teksar_ok")==="1"){mostrarApp();}
 
 // Splash de bienvenida
-window.addEventListener("load",function(){
-  setTimeout(function(){
+(function(){
+  function ocultarSplash(){
     var s=document.getElementById("splash");
-    if(s) s.classList.add("oculto");
-    setTimeout(function(){ if(s) s.style.display="none"; },800);
-  },3200);
-});
+    if(!s) return;
+    s.classList.add("oculto");
+    setTimeout(function(){ s.style.display="none"; },800);
+  }
+  // se oculta a los 3.2s desde que carga el script
+  setTimeout(ocultarSplash,3200);
+  // tocar la pantalla lo saltea
+  document.addEventListener("click",function(e){
+    var s=document.getElementById("splash");
+    if(s && !s.classList.contains("oculto") && s.style.display!=="none"){ ocultarSplash(); }
+  });
+})();
 
 </script>
 
