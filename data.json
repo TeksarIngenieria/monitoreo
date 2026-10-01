@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-10-01 05:17",
+  "actualizado": "2026-10-01 19:17",
   "totalPlantas": 23,
   "plantas": [
     {
@@ -44,32 +44,32 @@
       "kwp": 5.5,
       "tipo": "BATTERY_BACKUP",
       "estado": "NORMAL",
-      "potenciaActual": 0.0,
-      "consumoActual": 202.0,
-      "bateriaSOC": 37.0,
+      "potenciaActual": 660.0,
+      "consumoActual": 353.0,
+      "bateriaSOC": 100.0,
       "dia": {
-        "generation": 0.0,
-        "consumption": 1.4,
+        "generation": 10.9,
+        "consumption": 9.0,
         "grid": 0.0,
-        "purchase": 0.1,
-        "charge": 0.0,
-        "discharge": 1.3
+        "purchase": 3.5,
+        "charge": 6.9,
+        "discharge": 1.5
       },
       "mes": {
-        "generation": 0.0,
-        "consumption": 1.3,
+        "generation": 10.6,
+        "consumption": 8.6,
         "grid": 0.0,
-        "purchase": 0.1,
-        "charge": 0.0,
-        "discharge": 1.2
+        "purchase": 3.2,
+        "charge": 6.7,
+        "discharge": 1.5
       },
       "anio": {
-        "generation": 2042.6,
-        "consumption": 4550.3,
+        "generation": 2053.2,
+        "consumption": 4557.6,
         "grid": 1.2,
-        "purchase": 2592.2,
-        "charge": 1038.6,
-        "discharge": 955.3
+        "purchase": 2595.3,
+        "charge": 1045.3,
+        "discharge": 955.6
       },
       "alertas3d": 0,
       "alertaPrincipal": ""
@@ -80,32 +80,32 @@
       "kwp": 6.7,
       "tipo": "BATTERY_BACKUP",
       "estado": "NORMAL",
-      "potenciaActual": 0.0,
-      "consumoActual": 354.0,
-      "bateriaSOC": 70.0,
+      "potenciaActual": 555.0,
+      "consumoActual": 493.0,
+      "bateriaSOC": 94.0,
       "dia": {
-        "generation": 0.0,
-        "consumption": 1.2,
+        "generation": 12.5,
+        "consumption": 17.0,
         "grid": 0.0,
-        "purchase": 0.1,
-        "charge": 0.0,
-        "discharge": 1.1
+        "purchase": 6.0,
+        "charge": 6.5,
+        "discharge": 5.0
       },
       "mes": {
-        "generation": 0.0,
-        "consumption": 0.9,
+        "generation": 12.3,
+        "consumption": 16.7,
         "grid": 0.0,
-        "purchase": 0.0,
-        "charge": 0.0,
-        "discharge": 0.9
+        "purchase": 6.0,
+        "charge": 6.5,
+        "discharge": 4.9
       },
       "anio": {
-        "generation": 2120.4,
-        "consumption": 4826.2,
+        "generation": 2132.7,
+        "consumption": 4842.0,
         "grid": 0.0,
-        "purchase": 2774.3,
-        "charge": 961.7,
-        "discharge": 893.2
+        "purchase": 2780.3,
+        "charge": 968.2,
+        "discharge": 897.2
       },
       "alertas3d": 0,
       "alertaPrincipal": ""
@@ -116,31 +116,31 @@
       "kwp": 4.0,
       "tipo": "BATTERY_BACKUP",
       "estado": "NORMAL",
-      "potenciaActual": 2.0,
-      "consumoActual": 141.0,
+      "potenciaActual": 289.0,
+      "consumoActual": 256.0,
       "bateriaSOC": 100.0,
       "dia": {
-        "generation": 0.0,
-        "consumption": 0.4,
+        "generation": 1.6,
+        "consumption": 2.9,
         "grid": 0.0,
-        "purchase": 0.4,
-        "charge": 0.0,
+        "purchase": 1.4,
+        "charge": 0.1,
         "discharge": 0.0
       },
       "mes": {
-        "generation": 0.0,
-        "consumption": 0.3,
+        "generation": 1.6,
+        "consumption": 2.9,
         "grid": 0.0,
-        "purchase": 0.3,
-        "charge": 0.0,
+        "purchase": 1.4,
+        "charge": 0.1,
         "discharge": 0.0
       },
       "anio": {
-        "generation": 619.8,
-        "consumption": 1585.4,
+        "generation": 621.4,
+        "consumption": 1588.0,
         "grid": 0.0,
-        "purchase": 1020.8,
-        "charge": 57.7,
+        "purchase": 1021.9,
+        "charge": 57.8,
         "discharge": 2.5
       },
       "alertas3d": 0,
@@ -188,32 +188,32 @@
       "kwp": 5.8,
       "tipo": "BATTERY_BACKUP",
       "estado": "NORMAL",
-      "potenciaActual": 0.0,
-      "consumoActual": 252.0,
-      "bateriaSOC": 52.0,
+      "potenciaActual": 312.0,
+      "consumoActual": 242.0,
+      "bateriaSOC": 100.0,
       "dia": {
-        "generation": 0.0,
-        "consumption": 1.1,
+        "generation": 12.7,
+        "consumption": 12.6,
         "grid": 0.0,
-        "purchase": 0.0,
-        "charge": 0.0,
-        "discharge": 1.1
+        "purchase": 4.1,
+        "charge": 6.7,
+        "discharge": 2.5
       },
       "mes": {
-        "generation": 0.0,
-        "consumption": 1.0,
+        "generation": 12.6,
+        "consumption": 12.5,
         "grid": 0.0,
-        "purchase": 0.0,
-        "charge": 0.0,
-        "discharge": 1.0
+        "purchase": 4.1,
+        "charge": 6.7,
+        "discharge": 2.5
       },
       "anio": {
-        "generation": 2784.8,
-        "consumption": 6355.4,
+        "generation": 2797.4,
+        "consumption": 6366.9,
         "grid": 8.3,
-        "purchase": 3641.7,
-        "charge": 1194.7,
-        "discharge": 1125.3
+        "purchase": 3645.8,
+        "charge": 1201.4,
+        "discharge": 1126.8
       },
       "alertas3d": 0,
       "alertaPrincipal": ""
@@ -224,32 +224,32 @@
       "kwp": 4.68,
       "tipo": "BATTERY_BACKUP",
       "estado": "NORMAL",
-      "potenciaActual": 0.0,
-      "consumoActual": 327.0,
-      "bateriaSOC": 56.0,
+      "potenciaActual": 459.0,
+      "consumoActual": 438.0,
+      "bateriaSOC": 100.0,
       "dia": {
-        "generation": 0.0,
-        "consumption": 0.7,
+        "generation": 11.2,
+        "consumption": 8.8,
         "grid": 0.0,
-        "purchase": 0.0,
-        "charge": 0.0,
-        "discharge": 0.7
+        "purchase": 1.6,
+        "charge": 6.0,
+        "discharge": 2.0
       },
       "mes": {
-        "generation": 0.0,
-        "consumption": 0.6,
+        "generation": 11.1,
+        "consumption": 8.7,
         "grid": 0.0,
-        "purchase": 0.0,
-        "charge": 0.0,
-        "discharge": 0.6
+        "purchase": 1.6,
+        "charge": 6.0,
+        "discharge": 2.0
       },
       "anio": {
-        "generation": 2492.5,
-        "consumption": 4251.1,
+        "generation": 2503.6,
+        "consumption": 4259.2,
         "grid": 0.0,
-        "purchase": 1765.5,
-        "charge": 912.5,
-        "discharge": 905.6
+        "purchase": 1767.1,
+        "charge": 918.5,
+        "discharge": 907.0
       },
       "alertas3d": 0,
       "alertaPrincipal": ""
@@ -260,32 +260,32 @@
       "kwp": 7.0,
       "tipo": "BATTERY_BACKUP",
       "estado": "NORMAL",
-      "potenciaActual": 0.0,
-      "consumoActual": 381.0,
-      "bateriaSOC": 81.0,
+      "potenciaActual": 60.0,
+      "consumoActual": 159.0,
+      "bateriaSOC": 86.0,
       "dia": {
-        "generation": 0.0,
-        "consumption": 0.7,
+        "generation": 4.7,
+        "consumption": 3.4,
         "grid": 0.0,
-        "purchase": 0.0,
-        "charge": 0.0,
-        "discharge": 1.0
+        "purchase": 0.2,
+        "charge": 3.0,
+        "discharge": 3.7
       },
       "mes": {
-        "generation": 0.0,
-        "consumption": 0.6,
+        "generation": 4.6,
+        "consumption": 3.4,
         "grid": 0.0,
-        "purchase": 0.0,
-        "charge": 0.0,
-        "discharge": 0.8
+        "purchase": 0.2,
+        "charge": 2.9,
+        "discharge": 3.6
       },
       "anio": {
-        "generation": 1774.6,
-        "consumption": 2611.2,
+        "generation": 1779.2,
+        "consumption": 2614.0,
         "grid": 0.3,
-        "purchase": 1747.4,
-        "charge": 731.1,
-        "discharge": 618.6
+        "purchase": 1747.6,
+        "charge": 734.0,
+        "discharge": 621.4
       },
       "alertas3d": 0,
       "alertaPrincipal": ""
@@ -296,32 +296,32 @@
       "kwp": 21.0,
       "tipo": "BATTERY_BACKUP",
       "estado": "NORMAL",
-      "potenciaActual": 0.0,
-      "consumoActual": 193.0,
-      "bateriaSOC": 97.0,
+      "potenciaActual": 560.0,
+      "consumoActual": 134.0,
+      "bateriaSOC": 100.0,
       "dia": {
-        "generation": 0.0,
-        "consumption": 0.4,
+        "generation": 6.8,
+        "consumption": 2.5,
         "grid": 0.0,
         "purchase": 0.0,
-        "charge": 0.0,
-        "discharge": 0.6
+        "charge": 4.3,
+        "discharge": 2.9
       },
       "mes": {
-        "generation": 0.0,
-        "consumption": 0.3,
+        "generation": 6.7,
+        "consumption": 2.4,
         "grid": 0.0,
         "purchase": 0.0,
-        "charge": 0.0,
-        "discharge": 0.5
+        "charge": 4.3,
+        "discharge": 2.9
       },
       "anio": {
-        "generation": 1766.2,
-        "consumption": 947.6,
+        "generation": 1772.9,
+        "consumption": 949.7,
         "grid": 0.0,
         "purchase": 0.0,
-        "charge": 882.2,
-        "discharge": 947.4
+        "charge": 886.5,
+        "discharge": 949.8
       },
       "alertas3d": 0,
       "alertaPrincipal": ""
@@ -332,32 +332,32 @@
       "kwp": 5.0,
       "tipo": "BATTERY_BACKUP",
       "estado": "NORMAL",
-      "potenciaActual": 33.0,
-      "consumoActual": 551.0,
-      "bateriaSOC": 57.0,
+      "potenciaActual": 877.0,
+      "consumoActual": 824.0,
+      "bateriaSOC": 100.0,
       "dia": {
-        "generation": 0.0,
-        "consumption": 1.3,
+        "generation": 12.1,
+        "consumption": 11.0,
         "grid": 0.0,
-        "purchase": 0.3,
-        "charge": 0.0,
-        "discharge": 1.0
+        "purchase": 2.6,
+        "charge": 6.5,
+        "discharge": 2.8
       },
       "mes": {
-        "generation": 0.0,
-        "consumption": 1.1,
+        "generation": 12.0,
+        "consumption": 10.9,
         "grid": 0.0,
-        "purchase": 0.2,
-        "charge": 0.0,
-        "discharge": 0.9
+        "purchase": 2.6,
+        "charge": 6.5,
+        "discharge": 2.8
       },
       "anio": {
-        "generation": 2063.7,
-        "consumption": 6083.5,
+        "generation": 2075.7,
+        "consumption": 6093.3,
         "grid": 0.0,
-        "purchase": 4112.2,
-        "charge": 619.2,
-        "discharge": 526.8
+        "purchase": 4114.6,
+        "charge": 625.7,
+        "discharge": 528.7
       },
       "alertas3d": 0,
       "alertaPrincipal": ""
@@ -368,32 +368,32 @@
       "kwp": 4.7,
       "tipo": "BATTERY_BACKUP",
       "estado": "NORMAL",
-      "potenciaActual": 0.0,
-      "consumoActual": 170.0,
-      "bateriaSOC": 72.0,
+      "potenciaActual": 180.0,
+      "consumoActual": 142.0,
+      "bateriaSOC": 100.0,
       "dia": {
-        "generation": 0.0,
-        "consumption": 0.5,
+        "generation": 8.6,
+        "consumption": 5.5,
         "grid": 0.0,
-        "purchase": 0.1,
-        "charge": 0.0,
-        "discharge": 0.7
+        "purchase": 1.3,
+        "charge": 4.8,
+        "discharge": 2.8
       },
       "mes": {
-        "generation": 0.0,
-        "consumption": 0.5,
+        "generation": 8.5,
+        "consumption": 5.4,
         "grid": 0.0,
-        "purchase": 0.1,
-        "charge": 0.0,
-        "discharge": 0.6
+        "purchase": 1.3,
+        "charge": 4.8,
+        "discharge": 2.8
       },
       "anio": {
-        "generation": 1122.4,
-        "consumption": 1882.6,
+        "generation": 1130.9,
+        "consumption": 1887.5,
         "grid": 0.0,
-        "purchase": 1257.7,
-        "charge": 601.0,
-        "discharge": 586.8
+        "purchase": 1258.9,
+        "charge": 605.8,
+        "discharge": 589.0
       },
       "alertas3d": 0,
       "alertaPrincipal": ""
@@ -440,32 +440,32 @@
       "kwp": 7.0,
       "tipo": "BATTERY_BACKUP",
       "estado": "NORMAL",
-      "potenciaActual": 0.0,
-      "consumoActual": 419.0,
-      "bateriaSOC": 60.0,
+      "potenciaActual": 190.0,
+      "consumoActual": 128.0,
+      "bateriaSOC": 100.0,
       "dia": {
-        "generation": 0.0,
-        "consumption": 0.8,
+        "generation": 9.1,
+        "consumption": 7.3,
         "grid": 0.0,
-        "purchase": 0.0,
-        "charge": 0.0,
-        "discharge": 0.8
+        "purchase": 2.3,
+        "charge": 7.0,
+        "discharge": 2.9
       },
       "mes": {
-        "generation": 0.0,
-        "consumption": 0.7,
+        "generation": 9.0,
+        "consumption": 7.2,
         "grid": 0.0,
-        "purchase": 0.0,
-        "charge": 0.0,
-        "discharge": 0.7
+        "purchase": 2.3,
+        "charge": 7.0,
+        "discharge": 2.9
       },
       "anio": {
-        "generation": 1063.5,
-        "consumption": 1643.5,
+        "generation": 1072.5,
+        "consumption": 1650.0,
         "grid": 0.0,
-        "purchase": 725.4,
-        "charge": 727.9,
-        "discharge": 582.5
+        "purchase": 727.7,
+        "charge": 734.9,
+        "discharge": 584.7
       },
       "alertas3d": 0,
       "alertaPrincipal": ""
@@ -476,32 +476,32 @@
       "kwp": 7.0,
       "tipo": "BATTERY_BACKUP",
       "estado": "NORMAL",
-      "potenciaActual": 2.0,
-      "consumoActual": 181.0,
-      "bateriaSOC": 79.0,
+      "potenciaActual": 352.0,
+      "consumoActual": 349.0,
+      "bateriaSOC": 84.0,
       "dia": {
-        "generation": 0.0,
-        "consumption": 0.6,
+        "generation": 3.3,
+        "consumption": 5.7,
         "grid": 0.0,
-        "purchase": 0.6,
-        "charge": 0.0,
-        "discharge": 0.0
+        "purchase": 3.0,
+        "charge": 0.7,
+        "discharge": 0.1
       },
       "mes": {
-        "generation": 0.0,
-        "consumption": 0.5,
+        "generation": 3.3,
+        "consumption": 5.7,
         "grid": 0.0,
-        "purchase": 0.5,
-        "charge": 0.0,
-        "discharge": 0.0
+        "purchase": 3.0,
+        "charge": 0.7,
+        "discharge": 0.1
       },
       "anio": {
-        "generation": 789.2,
-        "consumption": 3039.5,
+        "generation": 792.5,
+        "consumption": 3044.7,
         "grid": 0.0,
-        "purchase": 2323.8,
-        "charge": 296.2,
-        "discharge": 222.7
+        "purchase": 2326.3,
+        "charge": 296.9,
+        "discharge": 222.8
       },
       "alertas3d": 0,
       "alertaPrincipal": ""
@@ -512,32 +512,32 @@
       "kwp": 9.4,
       "tipo": "BATTERY_BACKUP",
       "estado": "NORMAL",
-      "potenciaActual": 0.0,
-      "consumoActual": 588.0,
-      "bateriaSOC": 70.0,
+      "potenciaActual": 2990.0,
+      "consumoActual": 463.0,
+      "bateriaSOC": 100.0,
       "dia": {
-        "generation": 0.0,
-        "consumption": 1.6,
-        "grid": 0.0,
-        "purchase": 1.8,
-        "charge": 0.0,
-        "discharge": 0.0
+        "generation": 25.4,
+        "consumption": 8.7,
+        "grid": 15.2,
+        "purchase": 5.4,
+        "charge": 5.0,
+        "discharge": 0.2
       },
       "mes": {
-        "generation": 0.0,
-        "consumption": 1.5,
-        "grid": 0.0,
-        "purchase": 1.6,
-        "charge": 0.0,
-        "discharge": 0.0
+        "generation": 24.9,
+        "consumption": 8.6,
+        "grid": 14.8,
+        "purchase": 5.4,
+        "charge": 5.0,
+        "discharge": 0.2
       },
       "anio": {
-        "generation": 1925.0,
-        "consumption": 1791.7,
-        "grid": 844.8,
-        "purchase": 1096.3,
-        "charge": 671.2,
-        "discharge": 600.8
+        "generation": 1949.9,
+        "consumption": 1798.8,
+        "grid": 859.6,
+        "purchase": 1100.1,
+        "charge": 676.2,
+        "discharge": 601.0
       },
       "alertas3d": 0,
       "alertaPrincipal": ""
@@ -548,32 +548,32 @@
       "kwp": 4.7,
       "tipo": "BATTERY_BACKUP",
       "estado": "NORMAL",
-      "potenciaActual": 0.0,
-      "consumoActual": 328.0,
-      "bateriaSOC": 60.0,
+      "potenciaActual": 2952.0,
+      "consumoActual": 243.0,
+      "bateriaSOC": 100.0,
       "dia": {
-        "generation": 0.0,
-        "consumption": 0.9,
-        "grid": 0.0,
-        "purchase": 0.0,
-        "charge": 0.0,
-        "discharge": 0.9
+        "generation": 13.1,
+        "consumption": 5.6,
+        "grid": 7.8,
+        "purchase": 1.3,
+        "charge": 2.8,
+        "discharge": 1.8
       },
       "mes": {
-        "generation": 0.0,
-        "consumption": 0.8,
-        "grid": 0.0,
-        "purchase": 0.0,
-        "charge": 0.0,
-        "discharge": 0.8
+        "generation": 12.8,
+        "consumption": 5.5,
+        "grid": 7.6,
+        "purchase": 1.3,
+        "charge": 2.8,
+        "discharge": 1.8
       },
       "anio": {
-        "generation": 860.1,
-        "consumption": 420.9,
-        "grid": 625.2,
-        "purchase": 181.3,
-        "charge": 73.5,
-        "discharge": 78.2
+        "generation": 872.9,
+        "consumption": 425.6,
+        "grid": 632.8,
+        "purchase": 182.6,
+        "charge": 76.3,
+        "discharge": 79.2
       },
       "alertas3d": 0,
       "alertaPrincipal": ""
@@ -584,32 +584,32 @@
       "kwp": 4.7,
       "tipo": "BATTERY_BACKUP",
       "estado": "NORMAL",
-      "potenciaActual": 0.0,
-      "consumoActual": 304.0,
-      "bateriaSOC": 65.0,
+      "potenciaActual": 117.0,
+      "consumoActual": 126.0,
+      "bateriaSOC": 100.0,
       "dia": {
-        "generation": 0.0,
-        "consumption": 0.5,
+        "generation": 8.8,
+        "consumption": 6.6,
         "grid": 0.0,
-        "purchase": 0.1,
-        "charge": 0.0,
-        "discharge": 0.4
+        "purchase": 1.5,
+        "charge": 5.5,
+        "discharge": 1.8
       },
       "mes": {
-        "generation": 0.0,
-        "consumption": 0.4,
+        "generation": 8.8,
+        "consumption": 6.6,
         "grid": 0.0,
-        "purchase": 0.1,
-        "charge": 0.0,
-        "discharge": 0.3
+        "purchase": 1.5,
+        "charge": 5.5,
+        "discharge": 1.8
       },
       "anio": {
-        "generation": 679.5,
-        "consumption": 1606.8,
+        "generation": 688.3,
+        "consumption": 1613.0,
         "grid": 0.0,
-        "purchase": 1013.9,
-        "charge": 453.8,
-        "discharge": 367.2
+        "purchase": 1015.3,
+        "charge": 459.3,
+        "discharge": 368.7
       },
       "alertas3d": 0,
       "alertaPrincipal": ""
@@ -620,32 +620,32 @@
       "kwp": 5.0,
       "tipo": "BATTERY_BACKUP",
       "estado": "NORMAL",
-      "potenciaActual": 0.0,
-      "consumoActual": 92.0,
-      "bateriaSOC": 67.0,
+      "potenciaActual": 546.0,
+      "consumoActual": 1010.0,
+      "bateriaSOC": 100.0,
       "dia": {
-        "generation": 0.0,
-        "consumption": 0.5,
-        "grid": 0.0,
-        "purchase": 0.0,
-        "charge": 0.0,
-        "discharge": 0.5
+        "generation": 15.4,
+        "consumption": 5.0,
+        "grid": 8.9,
+        "purchase": 0.2,
+        "charge": 3.2,
+        "discharge": 1.5
       },
       "mes": {
-        "generation": 0.0,
-        "consumption": 0.5,
-        "grid": 0.0,
-        "purchase": 0.0,
-        "charge": 0.0,
-        "discharge": 0.5
+        "generation": 15.2,
+        "consumption": 5.1,
+        "grid": 8.7,
+        "purchase": 0.2,
+        "charge": 3.1,
+        "discharge": 1.5
       },
       "anio": {
-        "generation": 917.8,
-        "consumption": 422.5,
-        "grid": 526.1,
-        "purchase": 66.0,
-        "charge": 175.0,
-        "discharge": 139.8
+        "generation": 933.0,
+        "consumption": 427.1,
+        "grid": 534.8,
+        "purchase": 66.2,
+        "charge": 178.1,
+        "discharge": 140.8
       },
       "alertas3d": 0,
       "alertaPrincipal": ""
@@ -656,30 +656,30 @@
       "kwp": 10.0,
       "tipo": "BATTERY_BACKUP",
       "estado": "NORMAL",
-      "potenciaActual": 0.0,
-      "consumoActual": 996.0,
+      "potenciaActual": 1474.0,
+      "consumoActual": 1478.0,
       "bateriaSOC": null,
       "dia": {
-        "generation": 0.0,
-        "consumption": 1.3,
+        "generation": 18.0,
+        "consumption": 28.0,
         "grid": 0.0,
-        "purchase": 1.3,
+        "purchase": 10.0,
         "charge": 0.0,
         "discharge": 0.0
       },
       "mes": {
-        "generation": 0.0,
-        "consumption": 1.1,
+        "generation": 17.8,
+        "consumption": 27.7,
         "grid": 0.0,
-        "purchase": 1.1,
+        "purchase": 9.9,
         "charge": 0.0,
         "discharge": 0.0
       },
       "anio": {
-        "generation": 630.3,
-        "consumption": 1799.5,
+        "generation": 648.1,
+        "consumption": 1826.1,
         "grid": 0.0,
-        "purchase": 1169.2,
+        "purchase": 1178.0,
         "charge": 0.0,
         "discharge": 0.0
       },
@@ -691,29 +691,29 @@
       "nombre": "Damian Frangi (Lobos)",
       "kwp": 2.5,
       "tipo": "EXCESS",
-      "estado": "ALL_OFFLINE",
-      "potenciaActual": 138.3,
-      "consumoActual": 138.0,
+      "estado": "NORMAL",
+      "potenciaActual": 142.6,
+      "consumoActual": 142.0,
       "bateriaSOC": null,
       "dia": {
-        "generation": 0.0,
-        "consumption": 0.0,
+        "generation": 1.0,
+        "consumption": 1.0,
         "grid": 0.0,
         "purchase": 0.0,
         "charge": 0.0,
         "discharge": 0.0
       },
       "mes": {
-        "generation": 0.0,
-        "consumption": 0.0,
+        "generation": 1.0,
+        "consumption": 1.0,
         "grid": 0.0,
         "purchase": 0.0,
         "charge": 0.0,
         "discharge": 0.0
       },
       "anio": {
-        "generation": 144.6,
-        "consumption": 907.7,
+        "generation": 145.6,
+        "consumption": 908.7,
         "grid": 21.9,
         "purchase": 785.0,
         "charge": 0.0,
@@ -728,32 +728,32 @@
       "kwp": 22.0,
       "tipo": "BATTERY_BACKUP",
       "estado": "NORMAL",
-      "potenciaActual": 0.0,
-      "consumoActual": 4584.0,
-      "bateriaSOC": 40.0,
+      "potenciaActual": 3592.0,
+      "consumoActual": 5405.0,
+      "bateriaSOC": 94.0,
       "dia": {
-        "generation": 0.0,
-        "consumption": 9.5,
+        "generation": 45.1,
+        "consumption": 76.7,
         "grid": 0.0,
-        "purchase": 2.1,
-        "charge": 0.0,
-        "discharge": 7.4
+        "purchase": 33.6,
+        "charge": 11.1,
+        "discharge": 9.1
       },
       "mes": {
-        "generation": 0.0,
-        "consumption": 8.7,
+        "generation": 43.8,
+        "consumption": 75.0,
         "grid": 0.0,
-        "purchase": 1.3,
-        "charge": 0.0,
-        "discharge": 7.4
+        "purchase": 33.6,
+        "charge": 11.1,
+        "discharge": 8.7
       },
       "anio": {
-        "generation": 1767.5,
-        "consumption": 4060.4,
+        "generation": 1811.3,
+        "consumption": 4126.7,
         "grid": 2.9,
-        "purchase": 2339.7,
-        "charge": 387.5,
-        "discharge": 343.6
+        "purchase": 2372.0,
+        "charge": 398.6,
+        "discharge": 344.9
       },
       "alertas3d": 0,
       "alertaPrincipal": ""
@@ -764,32 +764,32 @@
       "kwp": 7.5,
       "tipo": "BATTERY_BACKUP",
       "estado": "NORMAL",
-      "potenciaActual": 0.0,
-      "consumoActual": 343.0,
-      "bateriaSOC": 85.0,
+      "potenciaActual": 181.0,
+      "consumoActual": 91.0,
+      "bateriaSOC": 100.0,
       "dia": {
-        "generation": 0.0,
-        "consumption": 0.7,
+        "generation": 8.8,
+        "consumption": 7.3,
         "grid": 0.0,
-        "purchase": 0.0,
-        "charge": 0.0,
-        "discharge": 0.7
+        "purchase": 0.3,
+        "charge": 4.1,
+        "discharge": 2.3
       },
       "mes": {
-        "generation": 0.0,
-        "consumption": 0.7,
+        "generation": 8.7,
+        "consumption": 7.2,
         "grid": 0.0,
-        "purchase": 0.0,
-        "charge": 0.0,
-        "discharge": 0.7
+        "purchase": 0.3,
+        "charge": 4.1,
+        "discharge": 2.3
       },
       "anio": {
-        "generation": 240.4,
-        "consumption": 275.8,
+        "generation": 249.1,
+        "consumption": 282.3,
         "grid": 0.0,
-        "purchase": 40.9,
-        "charge": 111.4,
-        "discharge": 105.9
+        "purchase": 41.2,
+        "charge": 115.5,
+        "discharge": 107.5
       },
       "alertas3d": 0,
       "alertaPrincipal": ""
@@ -800,32 +800,32 @@
       "kwp": 8.7,
       "tipo": "BATTERY_BACKUP",
       "estado": "NORMAL",
-      "potenciaActual": 0.0,
-      "consumoActual": 500.0,
-      "bateriaSOC": 87.0,
+      "potenciaActual": 1318.0,
+      "consumoActual": 1256.0,
+      "bateriaSOC": 100.0,
       "dia": {
-        "generation": 0.0,
-        "consumption": 1.3,
+        "generation": 18.9,
+        "consumption": 17.8,
         "grid": 0.0,
-        "purchase": 0.1,
-        "charge": 0.0,
-        "discharge": 1.2
+        "purchase": 4.8,
+        "charge": 13.5,
+        "discharge": 7.6
       },
       "mes": {
-        "generation": 0.0,
-        "consumption": 1.1,
+        "generation": 18.3,
+        "consumption": 17.3,
         "grid": 0.0,
-        "purchase": 0.1,
-        "charge": 0.0,
-        "discharge": 1.0
+        "purchase": 4.8,
+        "charge": 13.4,
+        "discharge": 7.6
       },
       "anio": {
-        "generation": 78.7,
-        "consumption": 113.2,
+        "generation": 97.0,
+        "consumption": 129.4,
         "grid": 0.0,
-        "purchase": 58.7,
-        "charge": 77.2,
-        "discharge": 53.0
+        "purchase": 63.4,
+        "charge": 90.6,
+        "discharge": 59.6
       },
       "alertas3d": 0,
       "alertaPrincipal": ""
