@@ -126,7 +126,7 @@ def main():
         time.sleep(0.3)
 
     salida = {
-        "actualizado": datetime.datetime.now().strftime("%Y-%m-%d %H:%M"),
+        "actualizado": datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=-3))).strftime("%Y-%m-%d %H:%M"),
         "totalPlantas": len(resultado),
         "plantas": resultado,
     }
